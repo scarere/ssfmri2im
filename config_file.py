@@ -3,20 +3,22 @@ import os
 GPU_ID = "0"
 
 #####################  PATHS  ######################################
-imagenet_dir = "/home/romanb/data/image_net/"
-imagenet_wind_dir = os.path.join(imagenet_dir,"wind/")
-external_images_dir =  os.path.join(imagenet_dir,"images224/val/")
+imagenet_dir = "/Users/scarere/Documents/UofT/OneDrive-UofT/ssfmri2im/imagenet"
+imagenet_wind_dir = os.path.join(imagenet_dir,"KamitaniImages/")
+external_images_dir =  os.path.join(imagenet_dir,"ImageNetVal2011")
 
-project_dir = "/home/romanb/data/ssfmri2im/"
-images_npz = os.path.join(project_dir,"data/images_112.npz")
+project_dir = "/Users/scarere/Documents/UofT/OneDrive-UofT/ssfmri2im/"
+images_npz = os.path.join(project_dir,"KamitaniData/images/images_112.npz")
 kamitani_data_format = True
-kamitani_data_mat = os.path.join(project_dir,"data/Subject3.mat")
+kamitani_data_mat = os.path.join(project_dir,"KamitaniData/fmri/Subject3.mat")
+test_image_ids = os.path.join(project_dir,"KamitaniData/images/image_test_id.csv")
+train_image_ids = os.path.join(project_dir,"KamitaniData/images/image_training_id.csv")
 caffenet_models_weights = os.path.join(project_dir,"models/imagenet-caffe-ref.mat")
 results  = os.path.join(project_dir,"results/")
 
 
 encoder_weights = os.path.join(project_dir,"models/encoder.hdf5")
-retrain_encoder = False
+retrain_encoder = True
 decoder_weights = None
 
 encoder_tenosrboard_logs = None

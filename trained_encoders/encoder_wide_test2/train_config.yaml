@@ -1,0 +1,15 @@
+batch_size: 64
+conv_ch: 192
+epochs: 200
+loss: combined_loss
+lr_schedule: false
+normalization: 1
+optimizer:
+  decay: 0.0
+  lr: 0.10000000149011612
+  momentum: 0.8999999761581421
+  nesterov: true
+outlier_removal: 0
+roi: ROI_VC
+scale_type: standard
+val_batch_size: 50

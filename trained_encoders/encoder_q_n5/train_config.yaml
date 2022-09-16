@@ -1,0 +1,16 @@
+batch_size: 64
+bin_percentiles:
+- 20.0
+- 60.0
+bins:
+- -0.8106632919125252
+- -0.24207595820905353
+- 0.24207595820905353
+- 0.8106632919125252
+loss: combined_loss
+optimizer:
+  decay: 0.0
+  lr: 0.10000000149011612
+  momentum: 0.8999999761581421
+  nesterov: true
+val_batch_size: 50

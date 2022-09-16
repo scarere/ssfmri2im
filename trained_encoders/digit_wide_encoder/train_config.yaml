@@ -1,0 +1,18 @@
+batch_size: 8
+conv_ch: 192
+dropout: 0.5
+epochs: 200
+loss: combined_loss
+loss_weighting: 'mse:  1, cos_prox: 0.1'
+lr_schedule: 'e<25: 0.001, e>25: 0.0001'
+max_shift: 5
+optimizer:
+  amsgrad: false
+  beta_1: 0.8999999761581421
+  beta_2: 0.9990000128746033
+  decay: 0.0
+  epsilon: 1.0e-07
+  lr: 0.0010000000474974513
+roi: ROI_VC
+scale_type: standard
+val_batch_size: 20

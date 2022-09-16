@@ -9,7 +9,7 @@ import os
 
 
 # Create Image dataset from Imagenet folders
-def image_generate(imgnet_dir = config_file.imagenet_wind_dir,test_csv='./imageID_test.csv',train_csv='./imageID_training.csv',size = config_file.image_size,out_file= config_file.images_npz,interpolation = 'cubic'):
+def image_generate(imgnet_dir = config_file.imagenet_wind_dir,test_csv='imageID_test.csv',train_csv='imageID_training.csv',size = config_file.image_size,out_file= config_file.images_npz,interpolation = 'cubic'):
     test_im = pd.read_csv(test_csv,header=None)
     train_im = pd.read_csv(train_csv,header=None)
 
@@ -20,7 +20,8 @@ def image_generate(imgnet_dir = config_file.imagenet_wind_dir,test_csv='./imageI
 
     for file in list(test_im[1]):
         folder = file.split('_')[0]
-        img = imread(imgnet_dir + folder + '/' + file)
+        #img = imread(imgnet_dir + folder + '/' + file)
+        img = imread(imgnet_dir + 'test/' + file)
         test_images[count] = image_prepare(img, size,interpolation)
         count += 1
 
@@ -28,7 +29,8 @@ def image_generate(imgnet_dir = config_file.imagenet_wind_dir,test_csv='./imageI
 
     for file in list(train_im[1]):
         folder = file.split('_')[0]
-        img = imread(imgnet_dir + folder + '/' + file)
+        #img = imread(imgnet_dir + folder + '/' + file)
+        img = imread(imgnet_dir + 'training/' + file)
         train_images[count] = image_prepare(img, size,interpolation)
         count += 1
     np.savez(out_file, train_images=train_images, test_images=test_images)

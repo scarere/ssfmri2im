@@ -17,7 +17,7 @@ import config_file
 MEAN_PIXELS = [123.68, 116.779, 103.939]
 
 class image_loss():
-    def __init__(self,img_len = config_file.image_size ,vgg_in=True,include_top = False ,normlize = True,train_imgs = None):
+    def __init__(self, vgg_weights='imagenet', img_len = config_file.image_size ,vgg_in=True,include_top = False ,normlize = True,train_imgs = None):
         self.layer_embed = {}
         self.norm_factor = {}
         self.include_top = include_top
@@ -28,7 +28,7 @@ class image_loss():
             x = Lambda(self.vgg_in)(in_img)
         else:
             x = in_img
-        model = vgg19.VGG19(weights='imagenet', include_top=include_top, input_shape=(img_len, img_len, 3),input_tensor= x)
+        model = vgg19.VGG19(weights=vgg_weights, include_top=include_top, input_shape=(img_len, img_len, 3),input_tensor= x)
 
         for layer in model.layers:
             layer.trainable = False

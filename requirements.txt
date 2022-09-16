@@ -1,0 +1,5 @@
+tensorflow==1.14
+pillow==8.0.1
+keras==2.2.4
+scipy==1.2.1
+pandas==1.1pip
